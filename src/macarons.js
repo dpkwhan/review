@@ -1,8 +1,8 @@
 // https://echarts.baidu.com/echarts2/doc/example/theme/macarons.js
 export default {
   color: [
-    "#2ec7c9",
-    "#b6a2de",
+    "green",
+    "blue",
     "#5ab1ef",
     "#ffb980",
     "#d87a80",

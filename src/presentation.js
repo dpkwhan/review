@@ -3,12 +3,20 @@ import React from "react";
 
 // Import Spectacle Core tags
 import { Deck, Heading, Slide, Text, List, ListItem } from "spectacle";
-import { Row, Col } from "antd";
+import { Row, Col, Tabs, Icon } from "antd";
 import MarketShareByYearExchWithData from "./components/MarketShareByYearExchWithData";
 import MarketShareByYearTapeACWithData from "./components/MarketShareByYearTapeACWithData";
+import MarketVolumeChangeWithData from "./components/MarketVolumeChangeWithData";
+import AtsMarketShareWithData from "./components/AtsMarketShareWithData";
+
+import atsMarketShare from "./data/ats_market_share.json";
+import atsMarketShareSelected from "./data/ats_market_share_selected.json";
+import nonatsMarketShare from "./data/nonats_market_share.json";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+
+const { TabPane } = Tabs;
 
 // Require CSS
 require("normalize.css");
@@ -119,6 +127,103 @@ export default class Presentation extends React.Component {
             UTP: NYSE vs NASDAQ
           </Text>
           <MarketShareByYearTapeACWithData />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Evolution of Market Volume
+          </Text>
+          <MarketVolumeChangeWithData />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            ATS and Non-ATS Market Share
+          </Text>
+          <Tabs defaultActiveKey="1" animated={false}>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="crown" />
+                  Top 10 ATS
+                </span>
+              }
+              key="1"
+            >
+              <AtsMarketShareWithData
+                data={atsMarketShare}
+                title="ATS Market Share"
+              />
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="alert" />
+                  ATS wtih Events
+                </span>
+              }
+              key="2"
+            >
+              <AtsMarketShareWithData data={atsMarketShareSelected} />
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="appstore" />
+                  By Liquidity Group
+                </span>
+              }
+              key="3"
+            >
+              ATS Volume By Liquidity Group
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="dollar" />
+                  By Price Level
+                </span>
+              }
+              key="4"
+            >
+              ATS Volume By Price Level
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="crown" />
+                  Top 10 non-ATS
+                </span>
+              }
+              key="5"
+            >
+              <AtsMarketShareWithData
+                data={nonatsMarketShare}
+                title="Non-ATS Market Share"
+              />
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="compass" />
+                  ATS vs non-ATS
+                </span>
+              }
+              key="6"
+            >
+              ATS vs non-ATS
+            </TabPane>
+          </Tabs>
         </Slide>
       </Deck>
     );

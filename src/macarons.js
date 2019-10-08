@@ -136,9 +136,9 @@ export default {
   },
 
   line: {
-    smooth: true,
+    smooth: false,
     symbol: "emptyCircle",
-    symbolSize: 3
+    symbolSize: 5
   },
 
   k: {

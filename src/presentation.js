@@ -5,6 +5,7 @@ import React from "react";
 import { Deck, Heading, Slide, Text, List, ListItem } from "spectacle";
 import { Row, Col } from "antd";
 import MarketShareByYearExchWithData from "./components/MarketShareByYearExchWithData";
+import MarketShareByYearTapeACWithData from "./components/MarketShareByYearTapeACWithData";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
@@ -106,6 +107,18 @@ export default class Presentation extends React.Component {
             Landscape of U.S. Equities Market
           </Text>
           <MarketShareByYearExchWithData />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            UTP: NYSE vs NASDAQ
+          </Text>
+          <MarketShareByYearTapeACWithData />
         </Slide>
       </Deck>
     );

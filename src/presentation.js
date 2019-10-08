@@ -32,8 +32,8 @@ export default class Presentation extends React.Component {
         transition={["fade"]}
         theme={theme}
         transitionDuration={500}
-        // contentWidth={"95%"}
-        // contentHeight={"100%"}
+        contentWidth={"95%"}
+        contentHeight={"100%"}
       >
         <Slide bgColor="primary">
           <Heading

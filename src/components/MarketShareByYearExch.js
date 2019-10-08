@@ -1,24 +1,11 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import autoBind from "react-autobind";
-import echarts from "echarts";
 import numeral from "numeral";
-import isEqual from "lodash/isEqual";
-import macarons from "./macarons";
+import ChartComponent from "./ChartComponent";
 
-class MarketShareByYearExch extends Component {
+class MarketShareByYearExch extends ChartComponent {
   constructor(props, context) {
     super(props, context);
     autoBind(this);
-  }
-
-  createChart(props) {
-    this.chart = echarts.init(ReactDOM.findDOMNode(this), "macarons");
-    if (!props) {
-      return null;
-    }
-    const options = this.makeChartOptions(props);
-    this.chart.setOption(options);
   }
 
   makeChartOptions(props) {
@@ -105,48 +92,6 @@ class MarketShareByYearExch extends Component {
       },
       series
     };
-  }
-
-  resizeContainer() {
-    const node = ReactDOM.findDOMNode(this);
-    const { height } = node.getBoundingClientRect();
-    node.style.height = height;
-    this.props.onResize(height);
-  }
-
-  componentDidMount() {
-    echarts.registerTheme("macarons", macarons);
-    this.resizeContainer();
-    this.createChart(this.props);
-    window.onresize = () => {
-      this.resizeContainer();
-      this.chart.resize();
-    };
-    setTimeout(
-      function() {
-        this.resizeContainer();
-      }.bind(this),
-      500
-    );
-  }
-
-  componentWillUnmount() {
-    this.chart.dispose();
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return false;
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (!isEqual(nextProps.data, this.props.data)) {
-      this.chart.dispose();
-      this.createChart(nextProps);
-    }
-  }
-
-  render() {
-    return <div style={{ height: "70vh", width: "100%" }} />;
   }
 }
 

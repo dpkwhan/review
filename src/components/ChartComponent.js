@@ -4,7 +4,7 @@ import autoBind from "react-autobind";
 import PropTypes from "prop-types";
 import echarts from "echarts";
 import isEqual from "lodash/isEqual";
-import macarons from "./macarons";
+import macarons from "../macarons";
 
 class ChartComponent extends Component {
   constructor(props, context) {

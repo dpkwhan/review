@@ -8,6 +8,7 @@ import MarketShareByYearExchWithData from "./components/MarketShareByYearExchWit
 import MarketShareByYearTapeACWithData from "./components/MarketShareByYearTapeACWithData";
 import MarketVolumeChangeWithData from "./components/MarketVolumeChangeWithData";
 import AtsMarketShareWithData from "./components/AtsMarketShareWithData";
+import SpotlightEvent from "./components/SpotlightEvent";
 
 import atsMarketShare from "./data/ats_market_share.json";
 import atsMarketShareSelected from "./data/ats_market_share_selected.json";
@@ -224,6 +225,108 @@ export default class Presentation extends React.Component {
               ATS vs non-ATS
             </TabPane>
           </Tabs>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Event Driven Analytics
+          </Text>
+          <Tabs defaultActiveKey="1" animated={false}>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="dollar" />
+                  Earnings Announcement
+                </span>
+              }
+              key="1"
+            >
+              Volume, Volume Profile, Intraday Price Movement
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="alert" />
+                  Index Rebalance
+                </span>
+              }
+              key="2"
+            >
+              Volume, Volume Profile, Intraday Price Movement
+            </TabPane>
+            <TabPane
+              tab={
+                <span>
+                  <Icon type="appstore" />
+                  Stock Splits
+                </span>
+              }
+              key="3"
+            >
+              Volume, Volume Profile
+            </TabPane>
+          </Tabs>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Odd-lot is not Odd
+          </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Navigating into Close
+          </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Machine Learning is Not a Silver Bullet
+          </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            Spotlight Events
+          </Text>
+          <SpotlightEvent />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text
+            textSize="1.5em"
+            margin="0px 0px 30px 0px"
+            bold
+            textColor="black"
+          >
+            What's New?
+          </Text>
         </Slide>
       </Deck>
     );

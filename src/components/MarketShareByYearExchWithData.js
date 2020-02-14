@@ -336,7 +336,7 @@ class MarketShareByYearExchWithData extends Component {
   render() {
     const { groupName, chartData, height } = this.state;
     const commentContent = this.exchangeGroups[groupName].content;
-    const leftColumnWidth = 14;
+    const leftColumnWidth = 24;
 
     return (
       <Fragment>

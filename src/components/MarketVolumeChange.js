@@ -67,6 +67,7 @@ class MarketVolumeChange extends ChartComponent {
       },
       toolbox: {
         show: true,
+        right: "5%",
         feature: {
           magicType: {
             show: true,

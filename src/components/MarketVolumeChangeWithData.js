@@ -104,7 +104,7 @@ class MarketVolumeChangeWithData extends Component {
   render() {
     const { period, chartData, height } = this.state;
     const commentContent = this.getCommentContent(period);
-    const leftColumnWidth = 16;
+    const leftColumnWidth = 24;
 
     return (
       <Fragment>

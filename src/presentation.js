@@ -59,14 +59,14 @@ export default class Presentation extends React.Component {
           <Heading size={3} caps textColor="tertiary" margin="0px 0px 50px 0px">
             Year In Review: 2019
           </Heading>
-          <Text
+          {/* <Text
             textSize="1.5em"
             margin="0px 0px 50px 0px"
             bold
             textColor="black"
           >
             Presented by
-          </Text>
+          </Text> */}
           <Text
             textSize="1.0em"
             margin="0px 0px 30px 0px"
@@ -177,7 +177,7 @@ export default class Presentation extends React.Component {
             >
               <AtsMarketShareWithData data={atsMarketShareSelected} />
             </TabPane>
-            <TabPane
+            {/* <TabPane
               tab={
                 <span>
                   <Icon type="appstore" />
@@ -198,7 +198,7 @@ export default class Presentation extends React.Component {
               key="4"
             >
               ATS Volume By Price Level
-            </TabPane>
+            </TabPane> */}
             <TabPane
               tab={
                 <span>
@@ -213,7 +213,7 @@ export default class Presentation extends React.Component {
                 title="Non-ATS Market Share"
               />
             </TabPane>
-            <TabPane
+            {/* <TabPane
               tab={
                 <span>
                   <Icon type="compass" />
@@ -223,7 +223,7 @@ export default class Presentation extends React.Component {
               key="6"
             >
               ATS vs non-ATS
-            </TabPane>
+            </TabPane> */}
           </Tabs>
         </Slide>
 

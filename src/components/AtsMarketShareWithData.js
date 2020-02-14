@@ -91,7 +91,7 @@ class AtsMarketShareWithData extends Component {
     const { reportType, chartData, height } = this.state;
     const { title } = this.props;
     const commentContent = this.getCommentContent(reportType);
-    const leftColumnWidth = 16;
+    const leftColumnWidth = 24;
 
     return (
       <Fragment>

@@ -1,5 +1,6 @@
 {
   "name": "yearinreview",
+  "homepage": "http://dpkwhan.github.io/yearinreview",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

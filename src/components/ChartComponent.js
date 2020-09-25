@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import autoBind from "react-autobind";
 import PropTypes from "prop-types";
 import echarts from "echarts";
-import isEqual from "lodash/isEqual";
+import * as R from 'ramda'
 import macarons from "../macarons";
 
 class ChartComponent extends Component {
@@ -53,7 +53,7 @@ class ChartComponent extends Component {
   }
 
   getSnapshotBeforeUpdate(prevProps) {
-    if (!isEqual(prevProps.data, this.props.data)) {
+    if (!R.equals(prevProps.data, this.props.data)) {
       this.chart.dispose();
       this.createChart(this.props);
     }
@@ -61,7 +61,7 @@ class ChartComponent extends Component {
   }
 
   render() {
-    return <div style={{ height: "70vh", width: "100%" }} />;
+    return <div style={{ height:"480px", width: "100%" }} />;
   }
 }
 

@@ -9,7 +9,7 @@ class AtsMarketShare extends ChartComponent {
   }
 
   makeChartOptions(props) {
-    const { title } = props;
+    // const { title } = props;
     const { legendData, xAxisData, series } = props.data;
     const style =
       "display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px";
@@ -19,7 +19,7 @@ class AtsMarketShare extends ChartComponent {
     return {
       title: {
         left: "center",
-        text: title
+        text: null,
       },
       xAxis: {
         type: "category",
@@ -29,7 +29,6 @@ class AtsMarketShare extends ChartComponent {
       },
       yAxis: {
         type: "value",
-        //min: "dataMin",
         min: 0,
         max: "dataMax",
         scale: true,
@@ -46,7 +45,7 @@ class AtsMarketShare extends ChartComponent {
         bottom: 0,
         left: "center",
         itemWidth: 20,
-        padding: [60, 80, 0, 80],
+        // padding: [60, 80, 0, 80],
         data: legendData
       },
       tooltip: {

@@ -17,7 +17,7 @@ const CalendarStyled = styled.time`
   }
 
   time.icon {
-    font-size: 0.5em; /* change icon size */
+    font-size: 1.2em; /* change icon size */
     display: block;
     position: relative;
     width: 7em;

@@ -2,8 +2,8 @@
 import React from "react";
 
 // Import Spectacle Core tags
-import { Deck, Heading, Slide, Text, List, ListItem } from "spectacle";
-import { Row, Col, Tabs, Icon } from "antd";
+import { Deck, Box, FlexBox, FullScreen, Progress, Heading, Slide, Text, UnorderedList, ListItem } from "spectacle";
+import { Row, Col, Tabs } from "antd";
 import MarketShareByYearExchWithData from "./components/MarketShareByYearExchWithData";
 import MarketShareByYearTapeACWithData from "./components/MarketShareByYearTapeACWithData";
 import MarketVolumeChangeWithData from "./components/MarketVolumeChangeWithData";
@@ -14,148 +14,101 @@ import atsMarketShare from "./data/ats_market_share.json";
 import atsMarketShareSelected from "./data/ats_market_share_selected.json";
 import nonatsMarketShare from "./data/nonats_market_share.json";
 
-// Import theme
-import createTheme from "spectacle/lib/themes/default";
+import {
+  CrownOutlined,
+  AlertOutlined,
+  DollarOutlined,
+  AppstoreOutlined,
+} from '@ant-design/icons';
 
 const { TabPane } = Tabs;
 
-// Require CSS
-require("normalize.css");
-
-const theme = createTheme(
-  {
-    primary: "white",
-    secondary: "black",
-    tertiary: "blue",
-    quaternary: "black"
-  },
-  {
-    primary: "Montserrat",
-    secondary: "Helvetica"
-  }
+const template = () => (
+  <FlexBox
+    justifyContent="space-between"
+    position="absolute"
+    bottom={0}
+    width="100%"
+  >
+    <Box padding="0 1em">
+      <FullScreen color="black"/>
+    </Box>
+    <Box padding="1em">
+      <Progress color="black"/>
+    </Box>
+  </FlexBox>
 );
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck
-        transition={["fade"]}
-        theme={theme}
-        transitionDuration={500}
-        contentWidth={"95%"}
-        contentHeight={"100%"}
-      >
-        <Slide bgColor="primary">
-          <Heading
-            transition={["fade"]}
-            size={1}
-            caps
-            lineHeight={1}
-            textColor="secondary"
-            margin="0px 0px 50px 0px"
-          >
-            U.S. Equities Market
-          </Heading>
-          <Heading size={3} caps textColor="tertiary" margin="0px 0px 50px 0px">
-            Year In Review: 2019
-          </Heading>
-          {/* <Text
-            textSize="1.5em"
-            margin="0px 0px 50px 0px"
-            bold
-            textColor="black"
-          >
-            Presented by
-          </Text> */}
-          <Text
-            textSize="1.0em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="blue"
-          >
-            David Han
-          </Text>
+      <Deck transitionEffect={["fade"]} template={template}>
+        <Slide backgroundColor="white">
+          <Box margin="auto 0">
+            <Heading transition={["fade"]} color="black" fontWeight="bold">
+              U.S. Equities Market
+            </Heading>
+            <Text textAlign="center" color="black" fontWeight="bold">
+              Year in Review: 2020
+            </Text>
+          </Box>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">Agenda</Text>
           <Row>
-            <Col span={6}></Col>
             <Col span={12}>
-              <Text
-                textSize="1.5em"
-                margin="0px 0px 30px 0px"
-                bold
-                textColor="black"
-                style={{ textAlign: "left" }}
-              >
-                Agenda
-              </Text>
-              <List>
+              <UnorderedList fontSize="2.5em" color="black">
                 <ListItem>U.S. Equities Market Share</ListItem>
                 <ListItem>Unlisted Trading Privileges</ListItem>
                 <ListItem>Evolution of Market Volume</ListItem>
                 <ListItem>Dark Liquidity</ListItem>
                 <ListItem>Event Driven Analytics</ListItem>
+              </UnorderedList>
+            </Col>
+            <Col span={12}>
+              <UnorderedList fontSize="2.5em" color="black">
                 <ListItem>Odd-lot in Focus</ListItem>
                 <ListItem>Navigating into Close</ListItem>
-                <ListItem>Machine Learning is Not a Silver Bullet</ListItem>
                 <ListItem>Spotlight Events</ListItem>
-                <ListItem>What's New?</ListItem>
-              </List>
+              </UnorderedList>
             </Col>
-            <Col span={6}></Col>
           </Row>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Landscape of U.S. Equities Market
           </Text>
           <MarketShareByYearExchWithData />
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             UTP: NYSE vs NASDAQ
           </Text>
           <MarketShareByYearTapeACWithData />
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Evolution of Market Volume
           </Text>
           <MarketVolumeChangeWithData />
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             ATS and Non-ATS Market Share
           </Text>
-          <Tabs defaultActiveKey="1" animated={false}>
+
+          <Row>
+            <Col span={2} />
+            <Col span={20}>
+            <Tabs defaultActiveKey="1" animated={false}>
             <TabPane
               tab={
                 <span>
-                  <Icon type="crown" />
+                  <CrownOutlined />
                   Top 10 ATS
                 </span>
               }
@@ -169,7 +122,7 @@ export default class Presentation extends React.Component {
             <TabPane
               tab={
                 <span>
-                  <Icon type="alert" />
+                  <AlertOutlined />
                   ATS wtih Events
                 </span>
               }
@@ -202,7 +155,7 @@ export default class Presentation extends React.Component {
             <TabPane
               tab={
                 <span>
-                  <Icon type="crown" />
+                  <CrownOutlined />
                   Top 10 non-ATS
                 </span>
               }
@@ -225,22 +178,23 @@ export default class Presentation extends React.Component {
               ATS vs non-ATS
             </TabPane> */}
           </Tabs>
+            </Col>
+            <Col span={2} />
+          </Row>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Event Driven Analytics
           </Text>
+          <Row>
+          <Col span={2} />
+          <Col span={20}>
           <Tabs defaultActiveKey="1" animated={false}>
             <TabPane
               tab={
                 <span>
-                  <Icon type="dollar" />
+                  <DollarOutlined />
                   Earnings Announcement
                 </span>
               }
@@ -251,7 +205,7 @@ export default class Presentation extends React.Component {
             <TabPane
               tab={
                 <span>
-                  <Icon type="alert" />
+                  <AlertOutlined />
                   Index Rebalance
                 </span>
               }
@@ -262,7 +216,7 @@ export default class Presentation extends React.Component {
             <TabPane
               tab={
                 <span>
-                  <Icon type="appstore" />
+                  <AppstoreOutlined />
                   Stock Splits
                 </span>
               }
@@ -271,60 +225,38 @@ export default class Presentation extends React.Component {
               Volume, Volume Profile
             </TabPane>
           </Tabs>
+          </Col>
+          <Col span={2} />
+          </Row>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Odd-lot is not Odd
           </Text>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Navigating into Close
           </Text>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Machine Learning is Not a Silver Bullet
           </Text>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             Spotlight Events
           </Text>
           <SpotlightEvent />
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text
-            textSize="1.5em"
-            margin="0px 0px 30px 0px"
-            bold
-            textColor="black"
-          >
+        <Slide backgroundColor="white">
+          <Text fontSize="3em" color="black" textAlign="left" fontWeight="bold">
             What's New?
           </Text>
         </Slide>

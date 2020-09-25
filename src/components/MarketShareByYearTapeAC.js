@@ -15,10 +15,10 @@ class MarketShareByYearTapeAC extends ChartComponent {
     const colorSpan = color =>
       `<span style="${style};background-color:${color}"></span>`;
 
-    return {
+    const options = {
       title: {
         left: "center",
-        text: "NASDAQ on Tape A vs NYSE on Tape C"
+        text: null
       },
       xAxis: {
         type: "category",
@@ -47,7 +47,6 @@ class MarketShareByYearTapeAC extends ChartComponent {
         bottom: 0,
         left: "center",
         itemWidth: 20,
-        padding: [60, 80, 0, 80],
         data: legendData
       },
       tooltip: {
@@ -103,6 +102,7 @@ class MarketShareByYearTapeAC extends ChartComponent {
       calculable: true,
       series
     };
+    return options;
   }
 }
 

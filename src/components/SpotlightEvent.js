@@ -24,7 +24,7 @@ const steps = [
               Chicago Stock Exchange was renamed as <i>NYSE Chicago</i>
             </h4>
             <ul>
-              <font size={5}>
+              <font size={5} color="black">
                 <li>
                   NYSE agreed to acquire 136-yearold Chicago Stock Exchange in
                   April 2018.
@@ -60,7 +60,7 @@ const steps = [
               NYSE, NASDAQ and CBOE Sued SEC Transaction Fee Pilot Program
             </h4>
             <ul>
-              <font size={5}>
+              <font size={5} color="black">
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
@@ -88,11 +88,11 @@ const steps = [
           <Col span={20}>
             <h3>SIP Operating Committees Issue Odd Lot Proposal</h3>
             <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-              <li>Item 5</li>
+              <font size={5} color="black">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </font>
             </ul>
           </Col>
         </Row>
@@ -115,11 +115,11 @@ const steps = [
           <Col span={20}>
             <h3>Cboe Market On Close</h3>
             <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-              <li>Item 5</li>
+            <font size={5} color="black">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </font>
             </ul>
           </Col>
         </Row>
@@ -142,7 +142,9 @@ const steps = [
           <Col span={20}>
             <h3>Nasdaq Closing Auction Enhancements</h3>
             <ul>
-              <li>http://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2019-66</li>
+              <font size={5} color="black">
+                <li>http://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2019-66</li>
+              </font>
             </ul>
           </Col>
         </Row>

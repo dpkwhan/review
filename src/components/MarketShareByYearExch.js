@@ -9,7 +9,8 @@ class MarketShareByYearExch extends ChartComponent {
   }
 
   makeChartOptions(props) {
-    const { legendData, xAxisData, series } = props.data;
+    const { method, data } = props;
+    const { legendData, xAxisData, series } = data;
     const style =
       "display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px";
     const colorSpan = color =>
@@ -22,11 +23,12 @@ class MarketShareByYearExch extends ChartComponent {
           animation: true
         },
         formatter: function(params) {
-          let rez = `<p style="text-align:left"><b>Year ${params[0].axisValue}</b></p>`;
+          let rez = `<p style="text-align:left"><b>Date: ${params[0].axisValue}</b></p>`;
           rez += "<table>";
           params.forEach(item => {
             const colorEle = colorSpan(item.color);
-            const pct = numeral(item.data).format("0.00%");
+            const fmt = method === "mktVolume" ? "0.0a" : "0.0%";
+            const pct = numeral(item.data).format(fmt);
             const xx = `<tr><td style="text-align:left">${colorEle} ${item.seriesName}</td><td style="text-align:right;padding-left:5px">${pct}</td></tr>`;
             rez += xx;
           });
@@ -35,24 +37,18 @@ class MarketShareByYearExch extends ChartComponent {
         }
       },
       legend: {
-        bottom: 0,
-        left: "center",
-        itemWidth: 20,
-        padding: [60, 80, 0, 80],
         data: legendData
       },
       toolbox: {
         show: true,
-        right: "5%",
+        right: "1%",
         feature: {
           magicType: {
             show: true,
-            type: ["line", "bar", "stack", "tiled"],
+            type: ["line", "bar"],
             title: {
               line: "Line Chart",
-              bar: "Bar Chart",
-              stack: "Stacked",
-              tiled: "Tiled"
+              bar: "Bar Chart"
             }
           },
           restore: { show: true, title: "Restore" },
@@ -60,7 +56,10 @@ class MarketShareByYearExch extends ChartComponent {
             show: true,
             title: "Save As Image",
             type: "png",
-            name: "market-share-by-year-exchange"
+            name:
+              method === "mktVolume"
+                ? "daily-volume-by-exchange"
+                : "market-share-by-exchange"
           }
         },
         orient: "vertical",
@@ -87,10 +86,29 @@ class MarketShareByYearExch extends ChartComponent {
         max: "dataMax",
         axisLabel: {
           formatter: function(value, index) {
-            return numeral(value).format("0%");
+            return method === "mktVolume"
+              ? numeral(value).format("0a")
+              : numeral(value).format("%");
           }
-        }
+        },
+        name: method === "mktVolume" ? "Market Volume" : "Market Share (%)",
+        nameLocation: "end",
+        nameGap: 22
       },
+      dataZoom: [
+        {
+          type: "inside",
+          start: 97,
+          end: 100
+        },
+        {
+          show: true,
+          type: "slider",
+          top: "95%",
+          start: 97,
+          end: 100
+        }
+      ],
       series
     };
   }

@@ -18,7 +18,7 @@ class MarketVolumeChange extends ChartComponent {
     return {
       title: {
         left: "center",
-        text: "Market Volume Change"
+        text: null,
       },
       xAxis: {
         type: "category",

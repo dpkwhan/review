@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import autoBind from "react-autobind";
 import { Row, Col } from "antd";
 import Calendar from "./Calendar";
-import MarketShareByYearTapeAC from "./MarketShareByYearExch";
+import MarketShareByYearTapeAC from "./MarketShareByYearTapeAC";
 import marketShareTapeAC from "../data/market_share_by_year_ac.json";
 
 class MarketShareByYearTapeACWithData extends Component {
@@ -66,7 +66,7 @@ class MarketShareByYearTapeACWithData extends Component {
         </Row>
 
         <Row type="flex" justify="start" style={{ marginTop: 30 }}>
-          <font size={4}>
+          <font size={4} color="black">
             Under UTP, NYSE-listed stocks can be traded on NASDAQ, but
             NASDAQ-listed stocks cannot be trade on NYSE.
             <ul className="comment-item">
@@ -103,7 +103,7 @@ class MarketShareByYearTapeACWithData extends Component {
               <Col span={20}>
                 <div
                   className="comments-content"
-                  style={{ height: Math.max(400, height - 100) }}
+                  style={{ height: Math.max(400, height - 50) }}
                 >
                   {commentContent}
                 </div>

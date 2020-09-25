@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/yearinreview/static/css/main.7130c407.chunk.css",
-    "main.js": "/yearinreview/static/js/main.5d3a0d33.chunk.js",
-    "main.js.map": "/yearinreview/static/js/main.5d3a0d33.chunk.js.map",
-    "runtime-main.js": "/yearinreview/static/js/runtime-main.7d70ea1d.js",
-    "runtime-main.js.map": "/yearinreview/static/js/runtime-main.7d70ea1d.js.map",
-    "static/css/2.adb13d3e.chunk.css": "/yearinreview/static/css/2.adb13d3e.chunk.css",
-    "static/js/2.f5db7a4e.chunk.js": "/yearinreview/static/js/2.f5db7a4e.chunk.js",
-    "static/js/2.f5db7a4e.chunk.js.map": "/yearinreview/static/js/2.f5db7a4e.chunk.js.map",
+    "main.css": "/yearinreview/static/css/main.ee21972d.chunk.css",
+    "main.js": "/yearinreview/static/js/main.d1f1831c.chunk.js",
+    "main.js.map": "/yearinreview/static/js/main.d1f1831c.chunk.js.map",
+    "runtime-main.js": "/yearinreview/static/js/runtime-main.98323c56.js",
+    "runtime-main.js.map": "/yearinreview/static/js/runtime-main.98323c56.js.map",
+    "static/css/2.cd846464.chunk.css": "/yearinreview/static/css/2.cd846464.chunk.css",
+    "static/js/2.6df4adc9.chunk.js": "/yearinreview/static/js/2.6df4adc9.chunk.js",
+    "static/js/2.6df4adc9.chunk.js.map": "/yearinreview/static/js/2.6df4adc9.chunk.js.map",
     "index.html": "/yearinreview/index.html",
-    "precache-manifest.dd539d789af61de197354c3c94128b71.js": "/yearinreview/precache-manifest.dd539d789af61de197354c3c94128b71.js",
+    "precache-manifest.df0c51f24d7d8425c2a1fb7a278eb8a5.js": "/yearinreview/precache-manifest.df0c51f24d7d8425c2a1fb7a278eb8a5.js",
     "service-worker.js": "/yearinreview/service-worker.js",
-    "static/css/2.adb13d3e.chunk.css.map": "/yearinreview/static/css/2.adb13d3e.chunk.css.map",
-    "static/css/main.7130c407.chunk.css.map": "/yearinreview/static/css/main.7130c407.chunk.css.map"
+    "static/css/2.cd846464.chunk.css.map": "/yearinreview/static/css/2.cd846464.chunk.css.map",
+    "static/css/main.ee21972d.chunk.css.map": "/yearinreview/static/css/main.ee21972d.chunk.css.map",
+    "static/js/2.6df4adc9.chunk.js.LICENSE.txt": "/yearinreview/static/js/2.6df4adc9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d70ea1d.js",
-    "static/css/2.adb13d3e.chunk.css",
-    "static/js/2.f5db7a4e.chunk.js",
-    "static/css/main.7130c407.chunk.css",
-    "static/js/main.5d3a0d33.chunk.js"
+    "static/js/runtime-main.98323c56.js",
+    "static/css/2.cd846464.chunk.css",
+    "static/js/2.6df4adc9.chunk.js",
+    "static/css/main.ee21972d.chunk.css",
+    "static/js/main.d1f1831c.chunk.js"
   ]
 }

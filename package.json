@@ -20,7 +20,6 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "craco  start",
     "build": "craco  build",
     "test": "craco  test",
@@ -46,5 +45,19 @@
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.14",
     "redbox-react": "^1.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

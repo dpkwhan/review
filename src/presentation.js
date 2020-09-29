@@ -51,6 +51,9 @@ export default class Presentation extends React.Component {
             <Text textAlign="center" color="black" fontWeight="bold">
               Year in Review: 2020
             </Text>
+            <Text textAlign="center" color="blue">
+              David Han
+            </Text>
           </Box>
         </Slide>
 
